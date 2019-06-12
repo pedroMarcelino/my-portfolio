@@ -19,6 +19,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 
@@ -26,23 +27,52 @@
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+
+    <script type="text/javascript">
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll > 100) {
+                $(".bg-dark").attr("class", "navbar fixed-top navbar-expand-lg back-menu");
+            } else {
+                $(".navbar").attr("class", "navbar fixed-top navbar-expand-lg navbar-dark bg-dark");
+            }
+        });
+
+        $(function () {
+            $('a[href*="#"]:not([href="#"])').click(function () {
+
+                var target = $(this.hash);
+
+                if (target.length) {
+                    $('html, body').animate({ scrollTop: target.offset().top - 70 }, 550);
+                    return false;
+                }
+
+            });
+        });
+    </script>
 </head>
 
 <body>
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <img src="assets/img/logo.png" width="auto" class="d-inline-block align-top" alt="">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/logo2.png" class="img-logo" alt="Logo">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link" href="#sobre">Features</a>
-                        <a class="nav-item nav-link" href="#">Pricing</a>
-                        <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <div class="navbar-nav menu">
+                        <a class="nav-item nav-link active" href="#inicio">Inicio <span
+                                class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#sobre">Sobre</a>
+                        <a class="nav-item nav-link" href="#trabalhos">Trabalhos</a>
+                        <a class="nav-item nav-link" href="#experiencia">Experiência</a>
+                        <a class="nav-item nav-link" href="#contato">Contato</a>
                     </div>
                 </div>
             </div>
@@ -50,34 +80,36 @@
     </header>
 
     <main>
-        <div class="jumbotron jumbotron-fluid">
+        <div id="inicio" class="jumbotron jumbotron-fluid">
             <div class="container mt-4">
                 <h1 class="display-3 text-jumb">Pedro Marcelino</h1>
                 <p class="lead text-jumb">Programador web, back e front end</p>
             </div>
         </div>
 
-        <div class="container">
-            <div class="row  mt-4">
-                <div class="col-md-12" id="sobre">
+        <div id="sobre" class="container shadow">
+            <section class="row  mt-4">
+                <div class="col-md-12">
                     <h2 class="display-3 ">Sobre mim</h2>
                     <div class="line"></div>
 
                     <div class="row mt-3">
                         <div class="col-md-6">
-                            <p class="p-sobre">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                est laborum. derit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur
-                                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                est laborum.
-                                derit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                est laborum.
+                            <p class="p-sobre">Pedro H. Marcelino Nascimento, nascido no dia
+                                09/04/2001, desde pequeno com a ideia de ser um grnade chefe de cozinha,
+                                em 2017 entrei no curso técnico da ETEC Adolpho Berezin, com passar do tempo fui
+                                descobrindo a programção e toda a logica que roda por trás e fui me apaixonando cada vez
+                                mais.
+                                na metade do 2º semestre do técnico nos mostraram como fazer um site, e foi amor a
+                                primeira vista.
+                                Hoje faço faculdade no Universidade Senac Santo Amaro, em São Paulo.
+                            </p>
+                            <p class="p-sobre">
+                                Sou uma pessoa calma e muito na minha, sou bem comunicativo e adoro trabalhar em equipe.
+                                Acredito que uma boa equipe não é formada por um grande chefe que da as ordens e os funcionarios 
+                                executam, mas pra mim, um bom chefe é aquele que sabe ouvir a ideia da equipe e conseguir executar 
+                                algo grandioso com muita harmonia.  
+
                             </p>
                         </div>
                         <div class="col-md-6">
@@ -85,10 +117,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row mt-4">
-                <div class="col-md-12" id="trabalhos">
+            </section>
+
+
+            <section class="row mt-4">
+                <div id="trabalhos"></div>
+                <div class="col-md-12">
                     <div class="float-right">
                         <h2 class="display-3 ">Trabalhos Feitos</h2>
                         <div class="float-right">
@@ -97,19 +132,20 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-xs-6 work mt-3">
+                <div class="col-md-4 col-xs-6 work mt-1">
                     <img class="img-responsive" src="./assets/img/busca.png" alt="">
                     <div class="overlay"></div>
                     <div class="work-content">
                         <span>Site</span>
                         <h3>Busca Inteligente</h3>
                         <div class="work-link">
-                            <a href="https://github.com/pedroMarcelino/busca-dinamica"><i class="fa fa-external-link-alt"></i></a>
+                            <a href="https://github.com/pedroMarcelino/busca-dinamica"><i
+                                    class="fa fa-external-link-alt"></i></a>
                             <a class="lightbox" href="./assets/img/busca.png"><i class="fa fa-search"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-xs-6 work mt-3">
+                <div class="col-md-4 col-xs-6 work mt-1">
                     <img class="img-responsive" src="./assets/img/chiode.png" alt="">
                     <div class="overlay"></div>
                     <div class="work-content">
@@ -122,7 +158,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-xs-6 work mt-3">
+                <div class="col-md-4 col-xs-6 work mt-1">
                     <img class="img-responsive" src="./assets/img/adid.png" alt="">
                     <div class="overlay"></div>
                     <div class="work-content">
@@ -136,7 +172,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-xs-6 work">
+                <div class="col-md-4 col-xs-6 work mt-1">
                     <img class="img-responsive" src="assets/img/projeto.jpg" alt="">
                     <div class="overlay"></div>
                     <div class="work-content">
@@ -149,26 +185,172 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-xs-6 work">
+                <div class="col-md-4 col-xs-6 work mt-1">
                     <img class="img-responsive" src="assets/img/exer.png" alt="">
                     <div class="overlay"></div>
                     <div class="work-content">
                         <span>Site</span>
                         <h3>Lógica de Programação</h3>
                         <div class="work-link">
-                            <a href="https://github.com/pedroMarcelino/Aulas-de-algoritimo"><i class="fa fa-external-link-alt"></i></a>
+                            <a href="https://github.com/pedroMarcelino/Aulas-de-algoritimo"><i
+                                    class="fa fa-external-link-alt"></i></a>
                             <a class="lightbox" href="assets/img/exer.png"><i class="fa fa-search"></i></a>
                         </div>
                     </div>
                 </div>
+            </section>
 
+            <section id="experiencia" class="row  mt-4">
+                <div class="col-md-12" id="sobre">
+                    <h2 class="display-3 ">Experiência</h2>
+                    <div class="line"></div>
 
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <p class="p-sobre">Aqui é um campo para desmonstrar um pouco do meu nivel de experiência,
+                                colocando somente partes de web. Tive o convivio com outras linguagens como C# e Java,
+                                porém hoje sigo somente na areá da web, pois desde o primeiro contato com essa areá
+                                foi algo que me fascinou desde o inicio.
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-1 mt-1">
+                                            <div class="bloco color-purple"></div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <p>HTML</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 mt-1">
+                                            <div class="bloco color-blue"></div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <p>CSS</p>
+                                        </div>
+                                    </div>
 
+                                    <div class="row">
+                                        <div class="col-md-1 mt-1">
+                                            <div class="bloco color-yellow"></div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p>JS / Jquery</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-1 mt-1">
+                                            <div class="bloco color-green"></div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p>Banco de Dados</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 mt-1">
+                                            <div class="bloco color-grey"></div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p>PHP</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 mt-1">
+                                            <div class="bloco color-orange"></div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p>Bootstrap</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="progress ">
+                                <div class="progress-bar progress-bar-striped active color-purple" role="progressbar"
+                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:99%">
+                                    99%
+                                </div>
+                            </div>
+                            <div class="progress mt-4">
+                                <div class="progress-bar progress-bar-striped active color-blue" role="progressbar"
+                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                    70%
+                                </div>
+                            </div>
+                            <div class="progress mt-4">
+                                <div class="progress-bar progress-bar-striped active color-yellow" role="progressbar"
+                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:84%">
+                                    84%
+                                </div>
+                            </div>
+                            <div class="progress mt-4">
+                                <div class="progress-bar progress-bar-striped active color-green" role="progressbar"
+                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+                                    90%
+                                </div>
+                            </div>
+                            <div class="progress mt-4">
+                                <div class="progress-bar progress-bar-striped active color-grey" role="progressbar"
+                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:94%">
+                                    94%
+                                </div>
+                            </div>
+                            <div class="progress mt-4">
+                                <div class="progress-bar progress-bar-striped active color-orange" role="progressbar"
+                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:99%">
+                                    99%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="contato" class="row mt-4">
+                <div class="col-md-12" id="trabalhos">
+                    <div class="float-right">
+                        <h2 class="display-3 ">Contato</h2>
+                        <div class="float-right">
+                            <div class="line2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Nome">Nome</label>
+                                <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+                            </div>
+                            <div class="form-group">
+                                <label for="assunto">Assunto</label>
+                                <input type="password" class="form-control" id="assunto" placeholder="Digite o assunto">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="menssagem">Menssagem</label>
+                                <textarea class="form-control" id="menssagem" rows="8"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-
         </div>
     </main>
-
+    <footer>
+        <p>Copyright © 2018 - Pedro Marcelino</p>
+    </footer>
 </body>
 
 </html>
