@@ -254,6 +254,12 @@ footer{
     padding: 25px;
 }
 
+.img{
+    background-image: url("../img/chiode.png");
+    background-size: cover;
+    filter: grayscale(1);
+}
+
 @media screen and (max-width: 992px) {
     .bg-dark{
         background: #212121 !important;
