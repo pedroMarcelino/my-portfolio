@@ -25,33 +25,10 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-    <script type="text/javascript">
-        $(window).scroll(function () {
-            var scroll = $(window).scrollTop();
-
-            if (scroll > 100) {
-                $(".bg-dark").attr("class", "navbar fixed-top navbar-expand-lg back-menu");
-            } else {
-                $(".navbar").attr("class", "navbar fixed-top navbar-expand-lg navbar-dark bg-dark");
-            }
-        });
-
-        $(function () {
-            $('a[href*="#"]:not([href="#"])').click(function () {
-
-                var target = $(this.hash);
-
-                if (target.length) {
-                    $('html, body').animate({ scrollTop: target.offset().top - 70 }, 550);
-                    return false;
-                }
-
-            });
-        });
-    </script>
+    <script src="assets/js/scripts.js"></script>
 </head>
 
 <body>
@@ -317,7 +294,7 @@
                     </div>
                 </div>
 
-                <form class="col-md-12">
+                <form id="form_contato" action="" method="POST" class="col-md-12" >
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -330,9 +307,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="assunto">Assunto</label>
-                                <input type="password" class="form-control" id="assunto" placeholder="Digite o assunto">
+                                <input type="text" class="form-control" id="assunto" placeholder="Digite o assunto">
                             </div>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
@@ -341,7 +317,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-12">                        
+                        <button type="button" class="btn btn-primary" id="enviar">Enviar</button>
+                    </div>
                 </form>
+                
             </div>
         </div>
     </main>
