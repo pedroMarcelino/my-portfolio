@@ -6,9 +6,7 @@ body{
 }
 
 
-.bg-dark{
-    background-color: transparent !important;
-}
+
 
 
 
@@ -157,8 +155,8 @@ body{
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-color: #6195FF;
-    color: #FFF;
+    background-color: #6195FF !important;
+    color: #FFF !important;
     line-height: 50px;
     text-align: center;
 }
@@ -232,9 +230,10 @@ body{
     font-size: 1.2em;
 }
 
-.back-menu{
-    background-color: #212121;
-    color: #cacaca;
+.back-menu, a{
+    background-color: transparent !important;
+    color: #ffffff !important;
+    text-decoration: none;
 }   
 
 .shadow{
@@ -260,9 +259,8 @@ footer{
     filter: grayscale(1);
 }
 
-@media screen and (max-width: 992px) {
-    .bg-dark{
-        background: #212121 !important;
-    }
+.icon{
+    font-size: 23px;
+    padding: 6px;
 }
 

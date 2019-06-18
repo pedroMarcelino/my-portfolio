@@ -1,11 +1,13 @@
 $(function () {
+    $(".navbar").attr("class", "navbar fixed-top navbar-expand-lg back-menu");
+    
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
 
         if (scroll > 100) {
-            $(".bg-dark").attr("class", "navbar fixed-top navbar-expand-lg back-menu");
+            $(".navbar").attr("class", "navbar fixed-top navbar-expand-lg navbar-dark bg-dark" );
         } else {
-            $(".navbar").attr("class", "navbar fixed-top navbar-expand-lg navbar-dark bg-dark");
+            $(".navbar").attr("class", "navbar fixed-top navbar-expand-lg back-menu");
         }
     });
 
@@ -45,23 +47,11 @@ $(function () {
             data: json,
             success: function (data) {
 
-                var obj = JSON.parse(data);
 
-                var ret = obj.success;
-
-                if (ret == true) {
-                    Swal.fire({
-                        type: 'success',
-                        title: 'Prontinho!',
-                        text: 'Recebi seu email, logo irei responder!',
-                    })
-                } else if (ret == false) {
-                    Swal.fire({
-                        type: 'error',
-                        title: 'Oops...',
-                        text: 'Ocorreu um problema!',
-                        footer: 'Digite novamente'
-                    })
+                if (data.success == true) {
+                    swal("Prontinho!", "Recebi seu email, logo irei responder!!", "success");
+                } else if (data.success == false) {
+                    swal("Oops...", "Ocorreu um problema, tente novamente!", "error");
                 }
 
 
