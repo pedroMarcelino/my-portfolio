@@ -303,21 +303,40 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="Nome">Nome</label>
-                                <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+                                <input type="text" class="form-control" id="nome" placeholder="Digite seu nome"
+                                    required>
+                                <div class="alert alert-danger alert-dismissible hidden1">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>Erro!</strong> Preencha esse campo.
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+                                <input type="email" class="form-control" id="email" placeholder="Digite seu email"
+                                    required>
+                                <div class="alert alert-danger alert-dismissible hidden2 ">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>Erro!</strong> Preencha esse campo.
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="assunto">Assunto</label>
-                                <input type="text" class="form-control" id="assunto" placeholder="Digite o assunto">
+                                <input type="text" class="form-control" id="assunto" placeholder="Digite o assunto"
+                                    required>
+                                <div class="alert alert-danger alert-dismissible hidden3">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>Erro!</strong> Preencha esse campo.
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="menssagem">Menssagem</label>
-                                <textarea class="form-control" id="menssagem" rows="8"></textarea>
+                                <textarea class="form-control" id="menssagem" rows="8" required></textarea>
+                            </div>
+                            <div class="alert alert-danger alert-dismissible hidden4">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                <strong>Erro!</strong> Preencha esse campo.
                             </div>
                         </div>
                     </div>
@@ -331,8 +350,9 @@
     </main>
     <footer>
         <p>Copyright © 2018 - Pedro Marcelino</p>
-        <p> <a class="icon" href="https://instagram.com/_marcellino0"><i class="fab fa-instagram"></i></a> 
-            <a class="icon" href="https://www.facebook.com/pedro.henriquemarcelinonascimento"><i class="fab fa-facebook-square"></i></a>
+        <p> <a class="icon" href="https://instagram.com/_marcellino0"><i class="fab fa-instagram"></i></a>
+            <a class="icon" href="https://www.facebook.com/pedro.henriquemarcelinonascimento"><i
+                    class="fab fa-facebook-square"></i></a>
             <a class="icon" href="https://github.com/pedroMarcelino"><i class="fab fa-github"></i></a>
         </p>
     </footer>
